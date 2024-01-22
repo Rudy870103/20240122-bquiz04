@@ -12,7 +12,7 @@
     </tr>
     <tr>
         <td class="tt ct">密碼</td>
-        <td class="pp"><input type="text" name="pw" id="pw"></td>
+        <td class="pp"><input type="password" name="pw" id="pw"></td>
     </tr>
     <tr>
         <td class="tt ct">電話</td>
@@ -31,3 +31,15 @@
     <button>註冊</button>
     <button>重置</button>
 </div>
+<script>
+    function chkacc(){
+        let acc=$("#acc").val();
+        $.get("./api/chk_acc.php",{acc},()=>{
+            if(parseInt(res)==1){
+                alert(`此帳號${acc}已被使用`);
+            }else{
+                alert(`此帳號${acc}可以使用`);
+            }
+        })
+    }
+</script>
