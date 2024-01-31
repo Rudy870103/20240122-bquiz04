@@ -4,12 +4,12 @@
         <tr>
             <th class="tt ct">所屬大分類</th>
             <td class="pp">
-                <input type="text" name="big" id="big">
+                <select name="big" id="big"></select>
             </td>
         </tr>
         <tr>
             <th class="tt ct">所屬中分類</th>
-            <td class="pp"><input type="text" name="mid" id="mid"></td>
+            <td class="pp"><select name="mid" id="mid"></select></td>
         </tr>
         <tr>
             <th class="tt ct">商品編號</th>
@@ -33,7 +33,7 @@
         </tr>
         <tr>
             <th class="tt ct">商品圖片</th>
-            <td class="pp"><input type="text" name="img" id=""></td>
+            <td class="pp"><input type="text" name="img" value=""></td>
         </tr>
         <tr>
             <th class="tt ct">商品介紹</th>
@@ -46,3 +46,25 @@
         <input type="button" value="返回">
     </div>
 </form>
+
+<script>
+    getTypes('big',0);
+
+    $("#big").on("change",function(){
+        getTypes('mid',$("#big").val())
+    })
+
+function getTypes(type,big_id){
+        $.get("./api/get_types.php",{big_id},(types)=>{
+            switch(type){
+                case 'big':
+                    $("#big").html(types);
+                    getTypes('mid',$("#big").val())
+                break;
+                case 'mid':
+                    $("#mid").html(types);
+                break;
+                }
+        })
+    }
+</script>
