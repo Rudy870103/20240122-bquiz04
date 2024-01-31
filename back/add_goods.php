@@ -1,5 +1,5 @@
 <h2 class="ct">新增商品</h2>
-<form action="./api/save_goods" method="post" enctype="multipart/form-data">
+<form action="./api/save_goods.php" method="post" enctype="multipart/form-data">
     <table class="all">
         <tr>
             <th class="tt ct">所屬大分類</th>
@@ -33,7 +33,7 @@
         </tr>
         <tr>
             <th class="tt ct">商品圖片</th>
-            <td class="pp"><input type="text" name="img" value=""></td>
+            <td class="pp"><input type="file" name="img" value=""></td>
         </tr>
         <tr>
             <th class="tt ct">商品介紹</th>
