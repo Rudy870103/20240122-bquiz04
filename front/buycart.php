@@ -42,7 +42,8 @@ if(!isset($_SESSION['mem'])){
     </table>
 
     <div class="ct">
-        <img src="./icon/0411.jpg" alt=""><img src="./icon/0412.jpg" alt="">
+        <img src="./icon/0411.jpg" alt="" onclick="location.href='index.php'">
+        <img src="./icon/0412.jpg" alt="" onclick="location.href='?do=checkout'">
     </div>
 
     <script>
