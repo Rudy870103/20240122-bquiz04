@@ -44,6 +44,7 @@ $goods=$Goods->find($_GET['id']);
         </tr>
     </table>
     <div class="ct">
+        <input type="hidden" name="id" value="<?=$goods['id'];?>">
         <input type="submit" value="修改">
         <input type="reset" value="重置">
         <input type="button" value="返回" onclick="location.href='?do=th'">
@@ -62,10 +63,12 @@ function getTypes(type,big_id){
             switch(type){
                 case 'big':
                     $("#big").html(types);
+                    $("#big").val(<?=$goods['big'];?>)
                     getTypes('mid',$("#big").val())
                 break;
                 case 'mid':
                     $("#mid").html(types);
+                    $("#mid").val(<?=$goods['mid'];?>)
                 break;
                 }
         })
