@@ -55,7 +55,7 @@ $row=$Mem->find(['acc'=>$_SESSION['mem']]);
 
     <div class="all ct tt">總價:<?=$sum;?>元</div>
 <div class="ct">
-    <input type="hidden" name="id" value="<?=$row['id'];?>">
+    <input type="hidden" name="total" value="<?=$sum;?>">
     <input type="submit" value="確定送出"></input>
     <input type="button" value="返回修改訂單" onclick="location.href='?do=buycart'">
 </div>
