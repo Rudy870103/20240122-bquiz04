@@ -6,6 +6,8 @@ $_POST['cart']=serialize($_SESSION['cart']);
 $_POST['acc']=$_SESSION['mem'];
 
 $Order->save($_POST);
+
+unset($_SESSION['cart']);
 ?>
 
 <script>
