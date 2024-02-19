@@ -11,7 +11,7 @@ if(!isset($_SESSION['mem'])){
 
     if(empty($_SESSION['cart'])){
         echo "<h2 class='ct'>購物車中尚無商品</h2>";
-    }
+    }else{
 ?>
     <table class="all">
         <tr class="tt ct">
@@ -53,3 +53,6 @@ if(!isset($_SESSION['mem'])){
             })
         }
     </script>
+<?php
+    }
+    ?>
